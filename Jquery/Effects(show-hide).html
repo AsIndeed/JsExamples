@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+<body>
+    
+    <p>Sıfırdan Web Developer Eğitimi</p>
+    
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    
+    <button id="toggle">Toggle</button>
+    
+    
+    
+    <script>
+        $(document).ready(function(){
+            $("#hide").click(function(){
+                $("p").hide(1000);
+            });
+            $("#show").click(function(){
+                $("p").show(1000,function(){
+                    alert("paragraf shown");
+                });
+            });
+            $("#toggle").click(function(){
+                $("p").toggle(1000);
+            });
+        });
+        
+    
+    </script>
+</body>
+</html>

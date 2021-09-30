@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <style>
+        body{
+            margin:0;
+            padding: 0;
+        }
+        
+        #message-box{
+            background-color: green;
+            text-align: center;
+            color:white;
+        }
+        
+        #header{
+            cursor: pointer;
+            height: 25px;
+            padding: 10px;
+            border-bottom: 1px solid #fff;
+        }
+        
+        #content{
+            padding: 10px;
+            display: none;
+        }
+        
+        #close{
+            float:right;
+        }
+        
+        #close:hover{
+            color:black;
+            cursor:alias;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="message-box">
+        <div id="header">
+           <span id="close">X</span>
+            You have a message!
+        </div>
+        <div id="content">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic est iste veritatis quia suscipit enim reiciendis qui dolorem eveniet adipisci vero dicta dolorum exercitationem odit libero consequuntur consectetur, quaerat voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid tempore fugiat nobis hic cupiditate alias. Facilis culpa obcaecati quaerat, deserunt, impedit eveniet dolorum suscipit at laborum voluptate aliquid fugit,Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, tenetur? Ad modi itaque error necessitatibus, nobis dolores voluptatem, esse totam quos quaerat nesciunt dolor assumenda fugit, quia sit. Suscipit, excepturi.orem ipsum dolor sit amet, consectetur adipisicing elit. Hic est iste veritatis quia suscipit enim reiciendis qui dolorem eveniet adipisci vero dicta dolorum exercitationem odit libero consequuntur consectetur, quaerat voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid tempore fugiat nobis hic cupiditate alias. Facilis culpa obcaecati quaerat, deserunt, impedit eveniet dolorum suscipit at laborum voluptate aliquid fugit,Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, tenetur? Ad modi itaque error necessitatibus, nobis dolores voluptatem, esse totam quos quaerat nesciunt dolor assumenda fugit, quia sit. Suscipit, excepturi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic est iste veritatis quia suscipit enim reiciendis qui dolorem eveniet adipisci vero dicta dolorum exercitationem odit libero consequuntur consectetur, quaerat voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid tempore fugiat nobis hic cupiditate alias. Facilis culpa obcaecati quaerat, deserunt, impedit eveniet dolorum suscipit at laborum voluptate aliquid fugit,Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, tenetur? Ad modi itaque error necessitatibus, nobis dolores voluptatem, esse totam quos quaerat nesciunt dolor assumenda fugit, quia sit. Suscipit, excepturi.orem ipsum dolor sit amet, consectetur adipisicing elit. Hic est iste veritatis quia suscipit enim reiciendis qui dolorem eveniet adipisci vero dicta dolorum exercitationem odit libero consequuntur consectetur, quaerat voluptate.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid tempore fugiat nobis hic cupiditate alias. Facilis culpa obcaecati quaerat, deserunt, impedit eveniet dolorum suscipit at laborum voluptate aliquid fugit,Lorem ipsum dolor sit amet, consectetur adipisicing elit. At, tenetur? Ad modi itaque error necessitatibus, nobis dolores voluptatem, esse totam quos quaerat nesciunt dolor assumenda fugit, quia sit. Suscipit, excepturi.
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    <script>
+        $(function(){
+            $("#header").click(function(){
+                $("#content").toggle(1000);
+            });
+            $("#close").click(function(){
+                $("#message-box").hide(1000);
+            });
+            
+        });
+
+        
+    
+    </script>
+</body>
+</html>

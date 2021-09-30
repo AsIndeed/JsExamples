@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+</head>
+
+<body>
+
+    <p id="slide">Sıfırdan Web Developer Eğitimi</p>
+
+    <button id="slideUp">Slide Up</button>
+    <button id="slideDown">Slide Down</button>
+
+    <button id="toggle">Toggle</button>
+
+    <br><br>
+
+
+    <p id="fade">Sıfırdan Web Developer Eğitimi</p>
+
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Down</button>
+    <button id="fadeTo">Fade To</button>
+    
+    <button id="toggleFade">Toggle</button>
+
+
+    <script>
+        $(document).ready(function() {
+            $("#slideUp").click(function() {
+                $("#slide").slideUp(1000);
+            });
+            $("#slideDown").click(function() {
+                $("#slide").slideDown(1000, function() {
+                    alert("Text shown!");
+                });
+            });
+            $("#toggle").click(function() {
+                $("#slide").slideToggle(1000);
+            });
+            
+
+            $("#fadeIn").click(function() {
+                $("#fade").fadeIn(1000);
+            });
+            $("#fadeOut").click(function() {
+                $("#fade").fadeOut(1000, function() {
+                    alert("Text shown!");
+                });
+            });
+            $("#toggleFade").click(function() {
+                $("#fade").fadeToggle(1000);
+            });
+            $("#fadeTo").click(function() {
+                $("#fade").fadeTo(1000,0.7);
+            });
+        });
+
+    </script>
+</body>
+
+</html>

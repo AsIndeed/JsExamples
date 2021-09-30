@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery Selectors</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
+    
+</head>
+<body>
+     <a href="#">Link</a>
+    <h3 id="header">JQuery Courses</h3>
+    <ul id="list">
+       
+        <li class="item">JQuery Reference</li>
+        <li>Selectors <a href="#">Link</a></li>
+        <li class="item">JQuery Plugins</li>
+    </ul>
+    
+    <script>
+        
+        document.getElementById("header").style.color="red";
+        
+        $("#header").css("color","blue");
+        
+        $("#list a").css("text-decoration","none");
+        
+        $("a").css("text-decoration","none");
+        
+        var styles = {
+            color:"green",
+            fontSize:"20px",
+            border:"1px solid red"
+        }
+        
+        $("ul li").css(styles);
+        
+        var lists = document.querySelectorAll("li");
+        
+        for(var i=0; i<lists.length;i++)
+            {
+                lists[i].style.color="red";
+            }
+        
+        $("a").css({
+            color:"brown",
+            fontSize:"20px",
+            border:"1px solid red"
+        });
+        
+        $(".item").css({
+            display:"none"
+        });
+        
+    
+    </script>
+</body>
+</html>

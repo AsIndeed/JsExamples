@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery Methods</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    
+    <style>
+        
+        .highlight{
+            background-color: yellow;
+            display: none;
+        }
+        
+        .green{
+            background-color: green;
+        }
+    
+    </style>
+    
+</head>
+<body>
+    
+    <h1>JQuery Helper Methods</h1>
+    
+    <ul>
+        <li>JQuery Selectors</li>
+        <li>JQuery Methods</li>
+        <li>JQuery Animations</li>
+    </ul>
+    
+    
+    
+    <input id="name" type="text" placeholder="Name">
+    <input id="lastName" type="text" class="green" placeholder="Last Name">
+    <button id="btnSave" onclick="namelastname();">Save</button>
+    
+    
+    
+    
+    
+    
+    
+    
+    <script>
+        console.log($("h1").text());
+        
+        console.log($("ul").text());
+        
+        console.log($("li").text());
+        
+        $("h1").text("Javascript JQuery");
+        
+        console.log($("input").val());
+    
+        //$("input").val("selamıalek")
+        
+        function namelastname(){
+            var name=$("#name").val();
+            var lastname=$("#lastName").val();
+            
+            console.log("name last name is : "+name+" "+lastname);
+            
+            //$("#name").addClass("highlight");
+            $("#lastName").removeClass("green");
+            
+            $("#name").toggleClass("highlight"); //varsa siler yoksa ekler
+        }
+        
+    </script>
+</body>
+</html>

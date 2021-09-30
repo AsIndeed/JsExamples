@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <p>
+            Ad : <input class="control" type="text">
+        </p>
+        <p>
+            Hobiler : <select class="control">
+                           <option value="spor" selected="selected">Spor Yapmak</option>
+                           <option value="sinema">Siname</option>
+                
+            </select>
+        </p>
+    </form>
+    
+    <script>
+        $(document).ready(function(){
+            $(".control").change(function(){
+                console.log($(this).val());
+            });
+        });
+    
+    
+    </script>
+</body>
+
+</html>

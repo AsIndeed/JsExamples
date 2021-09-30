@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <title>What should i do?</title>
+    <style>
+        *{
+            list-style: none;
+        }
+        body{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body class="container mt-3">
+    <form id="new-thing">
+        <div class="card">
+            <div class="card-header">
+                <h1 style="text-align: center;">To Do Application</h1>
+            </div>
+            <div class="card-body" id="firstCardBody">
+                <div class="d-inline-block col-3">
+                    <label for="toDoTitle" style="font-weight: bold;">Yapılacak iş </label>
+                    <input type="text" class="form-control" id="toDoTitle" name="toDoTitle">
+                </div>
+                <div class="d-inline-block col-3" style="margin-left: 20px;">
+                    <label for="lastDate" style="font-weight: bold;">Bitiş Tarihi </label>
+                    <input class="form-control" type="date" id="lastDate" name="lastDate">
+                </div>
+                <div class="d-inline-block col-3" style="margin-left: 20px;">
+                    <label for="colorpicker" style="font-weight: bold;">Renk Seçimi</label>
+                    <select name="colorpicker" id="colorpicker" class="form-select" onchange="changeColor()">
+                        <option id='green' value='green' style='background-color: #46a049;'>Yeşil </option>
+                        <option id='yellow' value='yellow' style='background-color: #FDD800;'>Sarı </option>
+                        <option id='blue' value='blue' style='background-color:#4285F4;'>Mavi </option>
+                    </select>
+                </div>
+                
+                <div class="col-10">
+                    <label for="toDoTitle" style="font-weight: bold;">Açıklama</label><br>
+                    <textarea class="form-control" name="toDoDescription" id="toDoDescription" cols="30" rows="3" class="col-6" style="width: 100%;"></textarea>
+                </div>
+                <button class="btn btn-primary mt-3" style="width: 20%;" id="btnEkle" type="submit">Ekle</button>
+            </div>
+        </div>
+    </form>
+    <div class="card mt-3">
+        <div class="card-header">
+            <p class="d-inline-block" style="font-weight: bold; font-size: 20px;">Yapılacaklar Listesi</p>
+            <a href="#" class="btn btn-primary" style="width: 15%; float:right;" id="btnDeleteAll">Hepsini sil</a>
+        </div>
+        <div class="card-body" id="task-list">
+            
+        </div>
+           
+    </div>
+    
+    <script>
+        var colorpicker = document.querySelector('#colorpicker')
+        
+        colorpicker.style.backgroundColor = '#46a049';
+        function changeColor(){
+            if(colorpicker.selectedIndex == 0){
+                document.querySelector('#colorpicker').style.backgroundColor = '#46a049';
+            }else if(colorpicker.selectedIndex == 1){
+                document.querySelector('#colorpicker').style.backgroundColor = '#FDD800';
+            }else if(colorpicker.selectedIndex == 2){
+                document.querySelector('#colorpicker').style.backgroundColor = '#4285F4';
+            }
+        }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

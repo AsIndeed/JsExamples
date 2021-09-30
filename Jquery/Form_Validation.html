@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-size: 180%;
+        }
+        
+        #wrapper{
+            width: 500px;
+            margin:0 auto;
+            
+        }
+
+        input {
+            padding: 15px;
+            font-size: 25px;
+            border-radius: 5px;
+            border: 1px solid grey;
+            width: 325px;
+        }
+
+        label {
+            display: inline-block;
+            width: 160px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 14px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            border: none;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        #error{
+            color:red;
+            text-align: left;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+    <div id="wrapper">
+       <div id="error">
+           
+       </div>
+        <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="text" name="email" id="email" placeholder="example@example.com">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone</label>
+            <input type="text" name="phone" id="phone" placeholder="555 11 22 33">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="*********">
+        </div>
+        <div class="form-group">
+            <label for="repassword">Re-Password</label>
+            <input type="repassword" name="repassword" id="repassword" placeholder="*********">
+        </div>
+        <button id="btn">Save</button>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    <script>
+    
+        $(function(){
+                
+                function isEmail(email)
+                {
+                    var pattern = /^([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)@([0-9a-zA-Z]([-_\\.]*[0-9a-zA-Z]+)*)[\\.]([a-zA-Z]{2,9})$/;
+                    return pattern.test(email);
+                }
+                
+                $("#btn").click(function(){
+                    
+                     var errormessage="";
+                     $("#error").html("");                 
+                    
+                    if($("#email").val()==""){
+                       errormessage+="<p>email alanı zorunlu alan</p>";                        
+                    }
+                    
+                    if(isEmail($("#email").val())==false){
+                        errormessage+="<p>email alanı düzgün girilmedi.</p>";
+                    }
+                    
+                    if($.isNumeric($("#phone").val())==false){
+                       errormessage+="<p>telefon alanı düzgün girilmemiş</p>";                        
+                    }
+                    
+                    if($("#phone").val()==""){
+                       errormessage+="<p>telefon alanı zorunlu alan</p>";                        
+                    }
+                    
+                    if($("#password").val()==""){
+                       errormessage+="<p>password alanı zorunlu alan</p>";                        
+                    }
+                    
+                    if($("#password").val() != $("#repassword").val()){
+                           errormessage+="<p>parola alanları eşleşmiyor</p>";                        
+                    }                    
+                    
+                    if(errormessage!=""){
+                        $("#error").html(errormessage);
+                    }
+                        
+                    
+                    
+                });
+            
+            });
+    
+    
+    </script>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+</body>
+
+</html>
